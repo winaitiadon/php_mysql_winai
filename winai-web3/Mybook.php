@@ -79,8 +79,8 @@ $result = $conn->query($query);
         <tr>
           <th scope="row"><?php echo $row['id'] ?></th>
         
-          <td><?php echo $row['name'] ?></td>
-          <td><?php echo $row['description'] ?></td>
+          <td><?php echo $row['bname'] ?></td>
+          <td><?php echo $row['bdescription'] ?></td>
           <td>
             <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-warning btn-sm">Edit</a>
             <a href="delete.php?id=<?php echo $row['id']?>" class="btn btn-danger btn-sm">Delete</a>

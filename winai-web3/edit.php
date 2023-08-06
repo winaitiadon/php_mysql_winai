@@ -3,11 +3,11 @@
 include('connection.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['id'])) {
     $id = $_GET['id'];
-    $name = $_POST['name'];
-    $description = $_POST['description'];
+    $name = $_POST['bname'];
+    $description = $_POST['bdescription'];
 
     // Update the record in the database
-    $query = "UPDATE books SET name = ?, description = ? WHERE id = ?";
+    $query = "UPDATE books SET bname = ?, bdescription = ? WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("ssi", $name, $description, $id);
 
@@ -95,9 +95,9 @@ if (isset($_GET['id'])) {
                             <form action="edit.php?id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group text-center">
                                 <label for="name" class="form-label">Name:</label>
-                                <input type="text" class="form-control" id="name" placeholder="ชื่อสินค้า" name="name" value="<?php echo $row['name'];?>">
+                                <input type="text" class="form-control" id="name" placeholder="ชื่อสินค้า" name="bname" value="<?php echo $row['name'];?>">
                                 <label for="description" class="form-label">Description:</label>
-                                <input type="text" class="form-control" id="description" placeholder="รายละเอียดสินค้า" name="description" value="<?php echo $row['description'];?>">
+                                <input type="text" class="form-control" id="description" placeholder="รายละเอียดสินค้า" name="bdescription" value="<?php echo $row['description'];?>">
                                 
                             </div>
                             <?php 

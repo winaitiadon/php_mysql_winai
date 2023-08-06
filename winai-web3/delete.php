@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
     if (mysqli_query($conn, $query)) {
         // Close the database connection
         mysqli_close($conn);
-        header("Location: Mybook.php"); // Redirect to the book page
+        header("Location: mybook.php"); // Redirect to the book page
         exit();
     } else {
         echo 'Error deleting mybooks: ' . mysqli_error($conn);

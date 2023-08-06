@@ -16,7 +16,7 @@ services:
       - mybooks-network
 
   web:
-    build: .
+    build: ./winai-web3
     container_name: mybooks-web
     restart: always
     depends_on:
